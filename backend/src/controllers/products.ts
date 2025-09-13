@@ -26,7 +26,7 @@ export const postProduct = (req: Request, res: Response, next: NextFunction) => 
     price,
   })
     .then((product) => {
-      res.send(product);
+      res.status(201).send(product);
     })
     .catch((error) => {
       if (error instanceof MangooseError.ValidationError) {
